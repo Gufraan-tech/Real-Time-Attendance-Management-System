@@ -1,123 +1,18 @@
-## AMS (Attendance Management System)
+Real-Time Attendance Management System Using WebSockets
+#webdev #mern #react #websockets
 
-#### Attendance Management System to track Attendance of employees.
+Efficient attendance tracking is vital for any organization. In our latest project, we developed a Real-Time Attendance Management System that improves the user experience with live updates, automated notifications, and reminders—powered entirely by WebSockets.
 
-## Tech Stack
+Core Features
 
-**Client:** Reactjs
+✅ Instant Attendance Updates with WebSockets
+By leveraging WebSockets, the system instantly updates attendance records across all connected devices. Whenever an employee marks their attendance, the change is immediately visible—no page refresh required.
 
-**Server:** Node, Express, Socket
+🔔 Automated Reminders & Notifications
+To help users stay on schedule, we implemented smart reminders. The system sends real-time alerts via WebSockets for check-ins and check-outs, ensuring compliance without manual follow-ups.
 
-**DB:** MongoDb
+🏢 Role-Based Permissions
+Administrators can track attendance in real time, analyze data, and send alerts, while employees have access to their personal attendance logs in a simple and intuitive interface.
 
-**Deployment:** Vercel
-
-## Authors
-
-- [@GaneshSrambikal](https://github.com/GaneshSrambikal)
-
-## About
-
-AMS is an platform that let's track your employees attendances. Admin only access to view/edit/delete attendances and employees.
-Also able to export records into pdf and csv formats.
-
-Employees can login and check-in/check-out there attendances.
-
-
-## Credentials
-#### Admin: 
-- email: sb@gmail.com
-- pass: 123456
-
-
-## ScreenShots
-- [Pages](https://www.behance.net/gallery/220659289/AMS-Attendance-Management-System)
-
-## BLOG
-- [Blog on DEV.to](https://dev.to/ganeshsrambikal/building-a-real-time-attendance-management-system-with-websockets-1jeb)
-
-## HOSTINGS
-- Backend: [Render](https://render.com/)
-- Frontend: [Vercel](https://vercel.com/)
-
-## Packages Used
-
-**Frontend:**
-
-| Packages         | npm links                                      |
-| ---------------- | ---------------------------------------------- |
-| axios            | https://www.npmjs.com/package/axios            |
-| jwt-decode       | https://www.npmjs.com/package/jwt-decode       |
-| react-icons      | https://www.npmjs.com/package/react-icons      |
-| react-router-dom | https://www.npmjs.com/package/react-router-dom |
-| react query      | https://www.npmjs.com/package/react-query             |
-
-**Backend:**
-|Packages | npm links |
-|---------|-----------|
-|express|https://www.npmjs.com/package/express|
-|mongodb|https://www.npmjs.com/package/mongodb|
-|mongoose|https://www.npmjs.com/package/mongoose|
-|jsonwebtoken|https://www.npmjs.com/package/jsonwebtoken|
-|bcryptjs|https://www.npmjs.com/package/bcryptjs|
-|socktet.io| https://www.npmjs.com/package/socket.io|
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-_for backend_
-
-```code
-DB_URI=
-PORT=5000
-JWT_SECRET='your_jwt_secret'
-```
-
-_for frontend_
-
-```code
-VITE_API_BASE_URL=
-
-
-```
-
-## Installation
-
-#### Clone / fork the repo
-
-```bash
-  git clone https://github.com/GaneshSrambikal/AMS.git
-```
-
-#### Frontend (cd frontend)
-
-```bash
-  npm install
-```
-
-#### Note: If dependencies error occurs (As project started with v19. then later downgraded to v18).
-
-```bash
- npm install --legacy-peer-deps
-```
-
-#### Backend (cd backend)
-
-```bash
-  npm install
-```
-
-## Run Locally
-
-Start the server
-
-```bash
-  npm run dev
-```
-
-Start the client
-
-```bash
-npm run dev
-```
+💾 Robust & Scalable Backend
+Our backend, built with Express.js, follows best practices for modularity and maintainability. WebSockets are integrated with Redis Pub/Sub, enabling scalable real-time communication across multiple servers.
