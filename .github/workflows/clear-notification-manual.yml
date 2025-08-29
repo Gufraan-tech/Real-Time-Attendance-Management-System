@@ -1,0 +1,25 @@
+name: Clear MongoDB Collection (Manual Trigger)
+
+on:
+  workflow_dispatch: # Allows manual trigger from GitHub Actions
+
+jobs:
+  clear-database:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+        - name: Install MongoDB Shell (mongosh)
+        run: |
+          curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo tee /usr/share/keyrings/mongodb-server-keyring.gpg > /dev/null
+          echo "deb [signed-by=/usr/share/keyrings/mongodb-server-keyring.gpg] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+          sudo apt-get update
+          sudo apt-get install -y mongodb-mongosh
+
+      - name: Clear MongoDB Collection
+        run: |
+          mongo "$MONGO_URI" --eval 'db.notifications.deleteMany({})'
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
